@@ -1,0 +1,57 @@
+<?php
+$password = "030224";
+$error = "";
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+
+    $input =
+    trim($_POST["n1"]) .
+    trim($_POST["n2"]) .
+    trim($_POST["n3"]) .
+    trim($_POST["n4"]) .
+    trim($_POST["n5"]) .
+    trim($_POST["n6"]);
+
+echo "Password = " . $password . "<br>";
+echo "Input = " . $input;
+exit();
+}
+?>
+
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<title>Enter Password</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="box">
+
+    <h2>💕 Enter Our Password 💕</h2>
+    <p>กรอกรหัส 6 หลัก</p>
+
+    <form method="post">
+
+        <div class="code">
+            <input type="text" name="n1" maxlength="1" required>
+            <input type="text" name="n2" maxlength="1" required>
+            <input type="text" name="n3" maxlength="1" required>
+            <input type="text" name="n4" maxlength="1" required>
+            <input type="text" name="n5" maxlength="1" required>
+            <input type="text" name="n6" maxlength="1" required>
+        </div>
+
+        <br>
+
+        <button type="submit">🔓 Unlock</button>
+
+    </form>
+
+    <p class="error"><?php echo $error; ?></p>
+
+</div>
+
+</body>
+</html>
